@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Start script - runs the built binary
+# Run script for Go project
 set -e
 
 # Move to project root (one level up from scripts/)
@@ -8,20 +8,21 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 APP_NAME="go-auth"
-BINARY="$PROJECT_ROOT/bin/$APP_NAME"
 
 echo ">>> Starting $APP_NAME..."
 cd "$PROJECT_ROOT"
 
-# Check if binary exists
-if [ ! -f "$BINARY" ]; then
-    echo "Error: Binary not found at bin/$APP_NAME"
-    echo "Run ./scripts/build.sh first"
+# Check if Go is installed
+if ! command -v go &> /dev/null; then
+    echo "Error: Go is not installed"
     exit 1
 fi
 
-# Run the binary
-"$BINARY"
+echo ">>> Fetching dependencies..."
+go mod tidy
+
+echo ">>> Starting $APP_NAME..."
+go run ./cmd/main.go
 
 # Back to original directory
 cd - > /dev/null

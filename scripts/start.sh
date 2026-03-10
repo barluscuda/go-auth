@@ -16,7 +16,7 @@ cd "$PROJECT_ROOT"
 # Check if binary exists
 if [ ! -f "$BINARY" ]; then
     echo "Error: Binary not found at bin/$APP_NAME"
-    echo "Run ./scripts/build.sh first"
+    echo "Run scripts/build.sh first"
     exit 1
 fi
 
