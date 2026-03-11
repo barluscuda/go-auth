@@ -6,6 +6,7 @@ set -e
 # Move to project root (one level up from scripts/)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+SERVER_FILE="cmd/server/main.go"
 
 APP_NAME="go-auth"
 OUTPUT_DIR="$PROJECT_ROOT/bin"
@@ -26,7 +27,7 @@ echo ">>> Fetching dependencies..."
 go mod tidy
 
 echo ">>> Building..."
-go build -o "$OUTPUT_DIR/$APP_NAME" ./cmd/main.go
+go build -o "$OUTPUT_DIR/$APP_NAME" ./$SERVER_FILE
 
 echo ">>> Build complete! Binary at: bin/$APP_NAME"
 
