@@ -6,6 +6,9 @@ An user management system built with Go, featuring authentication, authorization
 
 ## Environment Variables
 
+Supported in `.env` files:
+
+
 | Variable | Category | Description | Default |
 |----------|----------|-------------|---------|
 | `SERVER_MODE` | Server | Application mode — `dev` or `release` | `dev` |
