@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/barluscuda/go-auth/Internal/adapter/handler"
-	"github.com/barluscuda/go-auth/Internal/adapter/middleware"
+	"github.com/barluscuda/go-auth/Internal/app/adapter/http/handler"
+	"github.com/barluscuda/go-auth/Internal/app/adapter/http/middleware"
 	"github.com/gin-gonic/gin"
 )
 

@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/barluscuda/go-auth/Internal/adapter/router"
+	"github.com/barluscuda/go-auth/Internal/app/adapter/http/router"
 	"github.com/barluscuda/go-auth/config"
 	"github.com/gin-gonic/gin"
 )
