@@ -6,7 +6,7 @@ set -e
 # Move to project root (one level up from scripts/)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-SERVER_FILE="cmd/server/main.go"
+SERVER_FILE="cmd/main.go"
 
 APP_NAME="go-auth"
 OUTPUT_DIR="$PROJECT_ROOT/bin"
